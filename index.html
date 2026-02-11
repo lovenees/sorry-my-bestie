@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm So Sorry... 🥺</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap');
+
+        :root {
+            --pink-light: #ffe4e1;
+            --pink-main: #ff8fa3;
+            --pink-dark: #ff4d6d;
+            --text-color: #594d5b;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--pink-light);
+            font-family: 'Quicksand', sans-serif;
+            overflow: hidden;
+        }
+
+        /* Floating Background Stickers */
+        .bg-sticker {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.3;
+            z-index: 1;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+
+        /* Card Container */
+        .container {
+            position: relative;
+            width: 60%;
+            max-width: 250px;
+            background: white;
+            padding: 30px;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(255, 143, 163, 0.3);
+            text-align: center;
+            z-index: 10;
+            border: 4px solid white;
+        }
+
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Images and Stickers */
+        .main-img {
+            width: 100%;
+            max-height: 250px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            object-fit: contain;
+        }
+
+        h1 { color: var(--pink-dark); font-size: 1.6rem; margin-bottom: 10px; }
+        p { color: var(--text-color); font-size: 1.1rem; line-height: 1.5; margin-bottom: 25px; }
+
+        /* Buttons */
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background-color: var(--pink-main);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 77, 109, 0.2);
+        }
+
+        .btn:hover {
+            background-color: var(--pink-dark);
+            transform: translateY(-3px);
+        }
+
+        .btn-no {
+            background-color: #ccc;
+        }
+
+        /* Page Dots */
+        .dots {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: #eee;
+            border-radius: 50%;
+        }
+
+        .dot.active {
+            background: var(--pink-main);
+            width: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-sticker" style="top: 10%; left: 10%;">🌸</div>
+    <div class="bg-sticker" style="top: 20%; right: 15%;">✨</div>
+    <div class="bg-sticker" style="bottom: 15%; left: 20%;">💖</div>
+    <div class="bg-sticker" style="bottom: 10%; right: 10%;">🌷</div>
+
+    <div class="container">
+        <div class="page active" id="page1">
+            <img src="https://media1.tenor.com/m/nNDPoyAvKvwAAAAC/bubu-dudu-sseeyall.gif" class="main-img" alt="Sad sticker">
+            <h1>Hey Anshii... 🥺</h1>
+            <p>I know you're upset with me, and it's breaking my heart. Can you please click through this? Plzz Ek second Gussa side krke aage dekh le !😞</p>
+            <button class="btn" onclick="nextPage(2)">Click to Start →</button>
+        </div>
+
+        <div class="page" id="page2">
+            <img src="https://media1.tenor.com/m/1sllEEYLrrAAAAAC/happy-janmashtami.gif" class="main-img" alt="Sorry">
+            <h1>I Am Really Sorry!</h1>
+            <p>I hate it when we're not talking. I truly regret what I did. I'm so sorry!😔</p>
+            <button class="btn" onclick="nextPage(3)">I'm listening...</button>
+        </div>
+
+        <div class="page" id="page3">
+            <img src="https://media.tenor.com/9zEkFFH7llYAAAAi/help.gif" class="main-img" alt="Thinking">
+            <h1>You're My Favorite Person</h1>
+            <p>My days are incomplete without our chats and your vibes. I miss you so much. Samjha krr yaad aati h yrr teri Sacchii!!🙁</p>
+            <button class="btn" onclick="nextPage(4)">Next →</button>
+        </div>
+
+        <div class="page" id="page4">
+            <img src="https://media.tenor.com/MeOuvkW_3JQAAAAi/tkthao219-bubududu.gif" class="main-img" alt="Crying">
+            <h1>Please Don't Stay Mad</h1>
+            <p>I know I can be arrogant and rude sometimes, but I promise I never mean to hurt you. Aage se pakka aisa kuch nhi hoga🥺... PROMISE!</p>
+            <button class="btn" onclick="nextPage(5)">Continue →</button>
+        </div>
+
+        <div class="page" id="page5">
+            <img src="https://media.tenor.com/z3CNbYIb7wsAAAAi/tkthao219-bubududu.gif" class="main-img" alt="Flowers">
+            <h1>A Virtual Flower for You 🌹</h1>
+            <p>If I was there, I'd bring your favorite snacks and flowers. Prr Abhi aise hi kaam chla le yrr..🌹</p>
+            <button class="btn" onclick="nextPage(6)">Accept Flower →</button>
+        </div>
+
+        <div class="page" id="page6">
+            <img src="https://media.tenor.com/Q9VuGIKQqEMAAAAi/love-bear.gif" class="main-img" alt="Heart">
+            <h1>I Value Us So Much</h1>
+            <p>You know our friendship is way more important than any stupid argument. To Plzz maan jaa yrr 🥺</p>
+            <button class="btn" onclick="nextPage(7)">Almost there...</button>
+        </div>
+
+        <div class="page" id="page7">
+            <img src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" class="main-img" alt="Shy">
+            <h1>One Last Thing...</h1>
+            <p>I'll do whatever it takes to make you smile again. You deserve all the happiness!😘</p>
+            <button class="btn" onclick="nextPage(8)">Final Page →</button>
+        </div>
+
+        <div class="page" id="page8">
+            <img src="https://media.tenor.com/IUvV1AjqwOgAAAAi/tkthao219-bubududu.gif" class="main-img" alt="Please">
+            <h1>Forgive Me? 🥺</h1>
+            <p>Are we cool again? Can we go back to being the best duo? Plzz No pe click mt kriye..🥺</p>
+            <div class="btn-group">
+                <button class="btn" onclick="forgive()">Yes, I Forgive You! ❤️</button>
+                <button class="btn btn-no" id="noBtn" onmouseover="moveNo()">No</button>
+            </div>
+        </div>
+
+        <div class="dots" id="dotsContainer">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+
+    <script>
+    function nextPage(pageNumber) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById('page' + pageNumber).classList.add('active');
+        
+        const dots = document.querySelectorAll('.dot');
+        dots.forEach((dot, index) => {
+            index < pageNumber ? dot.classList.add('active') : dot.classList.remove('active');
+        });
+    }
+
+    function forgive() {
+        alert("Yay! ❤️ Sending you a huge digital hug! Chl ab to pyaar se baat krle yrr plzz ab to maan gyi!!😁");
+        location.reload();
+    }
+
+    /* Updated for Mobile: Keep the button within the container bounds */
+    function moveNo() {
+        const btn = document.getElementById('noBtn');
+        const container = document.querySelector('.container');
+        
+        // Calculate bounds so it stays on the phone screen
+        const maxX = container.clientWidth - btn.clientWidth - 40;
+        const maxY = container.clientHeight - btn.clientHeight - 100;
+        
+        const x = Math.random() * maxX + 20;
+        const y = Math.random() * maxY + 20;
+        
+        btn.style.position = 'absolute';
+        btn.style.left = x + 'px';
+        btn.style.top = y + 'px';
+    }
+</script>
+</body>
+</html>
